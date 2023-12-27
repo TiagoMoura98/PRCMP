@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "O espaço ocupado em disco pelo directório atual é:" du -hs
+counter=0
+fileresult=$(find . -maxdepth 1 -type f -size +1M)
+
+for file in $fileresult
+do
+	if [ -s $file ]
+	then
+	    echo " "
+	    counter=$((counter+1));
+            echo "$file" | cut -f1
+	else
+	    echo "***"
+	    echo " "
+	    echo "Não foi encontrado nenhum ficheiro com +1MB de tamanho."	   
+	fi
+done
+echo "***"
+echo " "
+echo "Existem $counter ficheiros com mais de 1MB."
+
+exit

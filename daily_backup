@@ -1,0 +1,22 @@
+#!/bin/bash
+
+date=$(date +%F)
+backups=/Users/tiagomoura/Desktop/PRCMP/backups
+dirBackupDate=/Users/tiagomoura/Desktop/PRCMP/backups/$data
+
+if [ -d $backups]
+then
+	mkdir $dirBackupDate
+	echo "Quer fazer backup do diretorio $HOME, do dia $date para o directorio %dirBackupDate?"
+	for param in "$@"
+	do
+	   find . -path "$backups" -prune -o -name "*.$param" -exec cp --parents {} $dirBackupDate\;
+	done
+	echo "Foi feito um backup do diretorio $HOME, do dia $date para o diretorio $dirBackupDate dos ficheiros $@"
+else
+	echo "O diretorio $backups não existe por isso foi criado"
+	mkdir $backups
+	mkdir $dirBackupDAte
+	for param in "$@"
+	do
+	   find . -path "$backups" -prune -o 

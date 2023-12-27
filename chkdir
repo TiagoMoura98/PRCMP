@@ -1,0 +1,21 @@
+#!/bin/bash
+
+mf=0
+md=0
+for nome in $(ls .)
+do
+    if [ -f $nome ] 
+    then 
+	mf=$((mf+1))
+	filename=$(wc -l $nome)
+	nl=$(wc -l < $nome)
+	np=$(wc -w < $nome)
+	echo "File: $filename"
+	echo "Número de ficheiros: $mf , Número de linhas $nl , Número de palavras $np"
+	echo "*****"
+    elif [ -d $nome ]
+    then
+	md=$((md+1))
+    fi
+done
+	 	

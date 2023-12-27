@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Utilização do script: ficheirotp nome_ficheiro"
+    exit 1
+fi
+
+if [ -f $1 ]
+   then
+	cat $1
+else
+	echo "Erro: ficheiro não encontrado"
+fi
+
+exit 0

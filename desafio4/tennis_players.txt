@@ -1,0 +1,5 @@
+Markus	Zillner	1970	73	178
+Sascha	Nensel	1970	76	180
+Florian	Krumrey	1970	76	191
+Markus	Naewie	1970	80	191
+Marc-Kevin	Goellner	1970	81	196

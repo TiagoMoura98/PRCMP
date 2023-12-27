@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Qual é o ficheiro que pretende ver o conteudo?"
+read filename
+
+findresult=$(find . -type f -name $filename)
+
+for file in ${findresult[@]}
+do
+	if [ -s $file ]
+	then
+		echo $file
+		cat $file
+	
+	fi
+done
